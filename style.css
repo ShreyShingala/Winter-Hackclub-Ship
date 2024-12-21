@@ -1,206 +1,244 @@
 body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f03f3f;
     margin: 0;
-    overflow: hidden;
+    padding: 0;
 }
 
-.sky {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    animation: sky-transition 20s infinite linear;
+.title {
+    font-family: 'Mountains of Christmas', cursive;
+    font-size: 5em;
+    color: #2f8a0b;
+    margin-top: 20px;
 }
 
-.sun, .moon {
+.subtitle {
+    font-size: 1.5em;
+    color: #1f591e;
+    margin-bottom: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 100px;
+    font-size: 1em;
+    color: rgb(0, 0, 0);
+    background: linear-gradient(45deg, #ff0000 25%, #ffffff 25%, #ffffff 50%, #ff0000 50%, #ff0000 75%, #ffffff 75%, #ffffff 100%);
+    background-size: 56.57px 56.57px;
+    border: 2px solid #194c03;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.snowman {
     position: absolute;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    top: 50%;
-    left: -100px;
-    transform: translateY(-50%);
-}
-
-.sun {
-    background: radial-gradient(circle, #fff59d, #fbc02d);
-    animation: sun-animation 20s infinite linear;
-    box-shadow: 0 0 40px 20px rgba(249, 237, 106, 0.563);
-}
-
-.moon {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
     top: 70%;
-    left: -100px;
-    transform: translateY(-50%);
-    background: radial-gradient(circle, #ffffff, #bbb);
-    animation: moon-animation 20s infinite linear;
-    box-shadow: 0px 0px 10px 5px rgba(130, 130, 130, 0.5);
-    overflow: hidden;
-}
-
-
-.moon .crater-1, .moon .crater-2, .moon .crater-3, .moon .crater-4, .moon .crater-5, .moon .crater-6 {
-    position: absolute;
-    border-radius: 50%;
-    background-color: rgba(180, 180, 180, 0.9);
-}
-
-.moon .crater-1 { width: 13px; height: 13px; top: 30%; left: 10%; }
-.moon .crater-2 { width: 10px; height: 10px; top: 60%; left: 40%; }
-.moon .crater-3 { width: 9px; height: 9px; top: 75%; left: 15%; }
-.moon .crater-4 { width: 3px; height: 3px; top: 40%; left: 70%; }
-.moon .crater-5 { width: 18px; height: 18px; top: 13%; left: 40%; }
-.moon .crater-6 { width: 20px; height: 20px; top: 55%; left: 88%; }
-
-.building1, .building2, .building3, .building4 {
-    position: absolute;
-    background: #2e2e2e;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.building1 {
-    width: 12%;
-    height: 1000px;
-    top: 80%;
-    left: 24%;
-}
-
-.building2 {
-    width: 8%;
-    height: 1000px;
-    top: 69%;
-    left: 39%;
-}
-
-.building3 {
-    width: 15%;
-    height: 1000px;
-    top: 90%;
     left: 50%;
+    transform: translateX(-50%);
+    margin: 50px auto;
+    width: 100px;
+    height: 180px;
 }
 
-.building4 {
-    width: 10%;
-    height: 1000px;
-    top: 51%;
-    left: 70%;
-}
-
-.window {
-    width: 10px;
-    height: 15px;
-    background: #000;
-    margin: 5px;
-    animation: window-light 20s infinite linear;
-}
-
-.star {
+.snowman .body {
     position: absolute;
-    width: 2px;
-    height: 2px;
     background-color: white;
     border-radius: 50%;
-    opacity: 0; 
-    animation: star-twinkle 20s infinite linear;
+    border: 2px solid #555;
 }
 
-@keyframes star-twinkle {
-    0%, 49% { opacity: 0; }
-    50% { opacity: 1; }
-    55%, 70%, 85% { opacity: 0.3; }
-    60%, 75% { opacity: 0.8; }
-    65%, 80%, 90% { opacity: 1; }
-    95% { opacity: 1; }
-    96%, 100% { opacity: 0; }
+.snowman .body.bottom {
+    width: 100px;
+    height: 100px;
+    bottom: 0;
 }
 
-@keyframes sun-animation {
-    0% { left: -100px; top: 70%; opacity: 1 }
-    25% { left: 50%; top: 10%; opacity: 1 }
-    50% { left: 110%; top: 70%; opacity: 1 }
-    50.01% { left: -100px; top: 70%; opacity: 0 }
-    75% { left: 50%; top: 10%; opacity: 0 }
-    100% { left: 110%; top: 70%; opacity: 0 }
+.snowman .body.middle {
+    width: 80px;
+    height: 80px;
+    bottom: 70px;
+    left: 10px;
 }
 
-@keyframes moon-animation {
-    0% { left: -100px; top: 70%; opacity: 0 }
-    25% { left: 50%; top: 10%; opacity: 0 }
-    50% { left: 110%; top: 70%; opacity: 0 }
-    50.01% { left: -100px; top: 70%; opacity: 1 }
-    75% { left: 50%; top: 10%; opacity: 1 }
-    100% { left: 110%; top: 70%; opacity: 1 }
+.snowman .body.top {
+    width: 60px;
+    height: 60px;
+    bottom: 130px;
+    left: 20px;
 }
 
-@keyframes sky-transition {
-    0% { 
-        background: linear-gradient(to bottom, #1e3a5f, #000);
-    }
-    50% { 
-        background: linear-gradient(to bottom, #87ceeb, #ffffff);
-    }
-    100% { 
-        background: linear-gradient(to bottom, #1e3a5f, #000);
-    }
+.snowman .eye {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    top: 20px;
 }
 
-@keyframes window-light {
-    0%  {background: #000; }
-    51% { background: #000; }
-    60% { background: #ffd700; }
-    95% { background: #ffd700; }
-    100% { background: #000; }
+.snowman .eye.left {
+    left: 15px;
 }
 
-.window:nth-child(1) {
-    animation-delay: 0s;
+.snowman .eye.right {
+    right: 15px;
 }
 
-.window:nth-child(2) {
-    animation-delay: 0.2s;
+.snowman .nose {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 30px;
+    border-color: transparent transparent transparent orange;
+    top: 30px;
+    left: 30px;
 }
 
-.window:nth-child(3) {
-    animation-delay: 0.5s;
+.snowman .httop {
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    left: 10px;
+    top: -23px;
+    border-radius: 150px 150px 0 0;
+    background-color: black;
 }
 
-.window:nth-child(4) {
-    animation-delay: 0.1s;
+.snowman .htbottom {
+    position: absolute;
+    width: 60px;
+    top: 2px;
+    height: 5px;
+    right: 0.1px;
+    background-color: black;
 }
 
-.window:nth-child(5) {
-    animation-delay: 0s;
+.snowman .mouth {
+    position: absolute;
+    top: 75%;
+    left: 38%;
+    height: 10px;
+    width: 20px;
+    border-radius: 150px 150px 0 0;
+    background-color: rgb(0, 0, 0);
+    rotate: 170deg;
 }
 
-.window:nth-child(6) {
-    animation-delay: 0.7s;
+.snowman .buttons{
+    position: relative;
+    top: -42%;
 }
 
-.window:nth-child(7) {
-    animation-delay: 0.2s;
+.snowman .button1, .snowman .button2, .snowman .button3 {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 50%;
+    left: 45%;
+    cursor: pointer;
 }
 
-.window:nth-child(8) {
-    animation-delay: 0.1s;
+.snowman .button1 {
+    top: 60px;
 }
 
-.window:nth-child(9) {
-    animation-delay: 0.2s;
+.snowman .button2 {
+    top: 70px;
 }
 
-.window:nth-child(10) {
-    animation-delay: 0.8s;
+.snowman .button3 {
+    top: 80px;
 }
 
-.window:nth-child(11) {
-    animation-delay: 0.4s;
+.snowman .hand-left, .snowman .hand-right {
+    position: relative;
+    width: 60px;
+    height: 5px;
+    background-color: #8B4513;
+    top: 20px;
+    right: 1px;
 }
 
-.window:nth-child(12) {
-    animation-delay: 0.3s;
+.snowman .hand-left {
+    position: absolute;
+    right: 75px;
+    transform: rotate(30deg);
+}
+
+.snowman .hand-right {
+    position: absolute;
+    left: 75px;
+    transform: rotate(-30deg);
+}
+
+.snowman .hand-left .finger1, .snowman .hand-left .finger2, .snowman .hand-left .finger3,
+.snowman .hand-right .finger1, .snowman .hand-right .finger2, .snowman .hand-right .finger3 {
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: #8B4513;
+}
+
+.snowman .hand-left .finger1 {
+    top: -5px;
+    left: 1px;
+    transform: rotate(30deg);
+}
+
+.snowman .hand-left .finger2 {
+    top: 10px;
+    left: 4px;
+    transform: rotate(330deg);
+}
+
+.snowman .hand-right .finger1 {
+    top: -5px;
+    right: 10px;
+    transform: rotate(-30deg);
+}
+
+.snowman .hand-right .finger2 {
+    top: 10px;
+    right: 4px;
+    transform: rotate(-330deg);
+}
+
+.snowflake {
+    position: absolute;
+    top: -15px;
+    width: 10px;
+    z-index: 9999;
+    height: 10px;
+    color: #fff;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    text-shadow: 0 0 5px #000;
+    opacity: 0.8;
+    animation: snow var(--speed) linear infinite;
+    animation-delay: var(--delay);
+}
+
+.snowflake .inner {
+    animation: snowflakes-shake var(--speed) linear infinite;
+    animation-delay: var(--delay);
+}
+
+.snowflake {
+    left: calc(100% * var(--i) / 10 + var(--offset));
+}
+
+@keyframes snow {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(110vh); }
+}
+@keyframes snowflakes-shake {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(80px); }
+    50% { transform: translateX(-80px); }
+    80% { transform: translateX(40px); }
+    100% { transform: translateX(0); }
 }

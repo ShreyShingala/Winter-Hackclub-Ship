@@ -1,5 +1,5 @@
 # Day in a city animation
 
-Short CSS animation made for Hack Club's Cascade YSWS.
+Static Website made using HTML and CSS for Hack Club's Winter Boba YSWS
 
-Shows a small city scenery which goes from day to night. 
+
