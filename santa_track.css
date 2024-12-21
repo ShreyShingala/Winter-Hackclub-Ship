@@ -1,0 +1,98 @@
+body {
+    
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-image: url('images/mappy.jpg');
+    margin: 0;
+    padding: 0;
+    background-position: center;
+    overflow: hidden;
+}
+
+.map {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('images/map.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.santa-dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: red;
+    border-radius: 50%;
+    animation: radar 2s linear infinite, move 300s linear infinite;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes radar {
+    0% {
+        width: 5px;
+        height: 5px;
+        opacity: 1;
+    }
+    95% {
+        width: 30px;
+        height: 30px;
+        opacity: 0;
+    }
+    100% {
+        width: 5px;
+        height: 5px;
+        opacity: 1;
+    }
+}
+
+@keyframes move {
+    0% {
+        top: 50%;
+        left: 50%;
+    }
+    25% {
+        top: 60%;
+        left: 50%;
+    }
+    50% {
+        top: 55%;
+        left: 55%;
+    }
+    75% {
+        top: 40%;
+        left: 45%;
+    }
+    100% {
+        top: 50%;
+        left: 50%;
+    }
+}
+
+.button {
+    display: inline-block;
+    margin: 10px 1300px 10px 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: rgb(0, 0, 0);
+    background: linear-gradient(45deg, #ff0000 25%, #ffffff 25%, #ffffff 50%, #ff0000 50%, #ff0000 75%, #ffffff 75%, #ffffff 100%);
+    background-size: 56.57px 56.57px;
+    border: 2px solid #194c03;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    animation: glow-shake 0.5s infinite alternate;
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ffffff;
+}
+
+@keyframes glow-shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    50% { transform: translateX(2px); }
+    75% { transform: translateX(-2px); }
+    100% { transform: translateX(0); }
+}

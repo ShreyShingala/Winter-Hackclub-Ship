@@ -30,6 +30,20 @@ body {
     border: 2px solid #194c03;
     border-radius: 5px;
     text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    animation: glow-shake 0.5s infinite alternate;
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff0000, 0 0 40px #ff0000, 0 0 50px #ff0000, 0 0 60px #ff0000, 0 0 70px #ff0000;
+}
+
+@keyframes glow-shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    50% { transform: translateX(2px); }
+    75% { transform: translateX(-2px); }
+    100% { transform: translateX(0); }
 }
 
 .snowman {
